@@ -47,7 +47,7 @@ const NewProject = () => {
     }
 
     const nextPage = () => {
-        if (currentPage == 3) {
+        if (currentPage === 3) {
             addProject(project);
             navigate("/");
         } else {
@@ -71,7 +71,7 @@ const NewProject = () => {
             <Typography alignSelf="center" variant="h3" gutterBottom={true}>
                 {titles[currentPage-1]}
             </Typography>
-            <Box display="flex">
+            <Box display="flex" width={860}>
                 <Grid container rowSpacing={3} columnSpacing={3}>
                     {currentPage === 1 &&
                     <FirstPage
@@ -101,7 +101,7 @@ const NewProject = () => {
                     <Grid item container
                           justifyContent="space-between">
                         <Grid item>
-                            {currentPage != 1 &&
+                            {currentPage !== 1 &&
                             <Button onClick={prevPage}>Vissza</Button>
                             }
                         </Grid>

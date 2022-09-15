@@ -25,7 +25,7 @@ const ProjectCard = (props: ProjectCardProps) => {
 
     useEffect(() => {
         fetchImage();
-    }, []);
+    });
 
     const handleClickOpen = () => {
         setOpen(true);

@@ -1,4 +1,4 @@
-import {Dialog, DialogContent, DialogTitle, Divider, Grid, Typography} from "@mui/material";
+import {Dialog, DialogContent, DialogTitle, Divider, Grid, Link, Typography} from "@mui/material";
 import {Project} from "../types";
 
 type DialogProps = {
@@ -26,7 +26,7 @@ const ProjectDetailsDialog = (props: DialogProps) => {
                 )}
                 <Divider textAlign="left" style={{margin: 8}}>Csatolt dokumentumok</Divider>
                 {props.project.links.map((link) =>
-                        <Grid item xs={12}>{link}</Grid>
+                    <Grid item xs={12}><Link href={link} target="_blank">{link}</Link></Grid>
                 )}
             </DialogContent>
         </Dialog>

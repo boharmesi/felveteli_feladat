@@ -22,11 +22,15 @@ const ProjectList = () => {
     return (
         <>
             <Typography alignSelf="center" gutterBottom={true} variant="h3">Projektek</Typography>
-                <Grid container justifyContent="center">
+                <Grid container direction="row"
+                      alignItems="center"
+                      justifyContent="center">
                     <Grid item>
                         <Button startIcon={<AddIcon/>} onClick={handleClick}>Új projekt</Button>
                     </Grid>
-                    <Grid item container justifyItems="space-between" rowSpacing={3} columnSpacing={3}>
+                    <Grid item container direction="row"
+                          alignItems="center"
+                          justifyContent="center" rowSpacing={3} columnSpacing={3}>
                         {projects.map((value, index) =>
                             <ProjectCard key={index} project={value}/>
                         )}

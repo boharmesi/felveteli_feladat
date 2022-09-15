@@ -20,7 +20,7 @@ const FirstPage = (props: FirstPageProps) => {
                     inputProps={{
                         maxLength: 255,
                     }}
-                    defaultValue={props.name != "" ? props.name : null}
+                    defaultValue={props.name !== "" ? props.name : null}
                     fullWidth={true}
                     error={props.nameError}
                     helperText={"Kötelező mező"}
@@ -41,7 +41,7 @@ const FirstPage = (props: FirstPageProps) => {
                         maxLength: 500,
                         minLength: 50,
                     }}
-                    defaultValue={props.description != "" ? props.description : null}
+                    defaultValue={props.description !== "" ? props.description : null}
                     fullWidth={true}
                     multiline={true}
                     onChange={(e) => props.setDescription(e.target.value)}

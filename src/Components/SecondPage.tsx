@@ -19,12 +19,17 @@ const SecondPage = (props: SecondPageProps) => {
     const handleClick = () => {
         setWorkerNum(workerNum + 1);
         props.addWorker(workerName, workerPos);
+        setWorkerName("");
+        setWorkerPos("");
     }
 
     return (
         <>
             {props.workers.map((value, index) =>
-                <WorkerDetails key={index} name={value.name} position={value.position}/>
+                <>
+                    <WorkerDetails key={index} name={value.name} position={value.position}/>
+
+                </>
             )}
             <Grid item xs={6}>
                 <TextField
@@ -34,6 +39,7 @@ const SecondPage = (props: SecondPageProps) => {
                     onChange={(e) => {
                         setWorkerName(e.target.value)
                     }}
+                    value={workerName}
                 />
             </Grid>
             <Grid item xs={6}>
@@ -44,6 +50,7 @@ const SecondPage = (props: SecondPageProps) => {
                     onChange={(e) => {
                         setWorkerPos(e.target.value)
                     }}
+                    value={workerPos}
                 />
             </Grid>
             <Grid container justifyContent={'flex-end'}>
@@ -53,9 +60,8 @@ const SecondPage = (props: SecondPageProps) => {
                     </Button>
                 </Grid>
             </Grid>
-
         </>
     );
-}
+};
 
 export default SecondPage;

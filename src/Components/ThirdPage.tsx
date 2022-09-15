@@ -1,7 +1,6 @@
-import {Button, Grid, TextField} from "@mui/material";
+import {Button, Divider, Grid, TextField, Typography} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import React, {useState} from "react";
-import LinkDetails from "./LinkDetails";
 
 type ThirdPageProps = {
     addLink: (link: string) => void;
@@ -11,17 +10,26 @@ type ThirdPageProps = {
 const ThirdPage = (props: ThirdPageProps) => {
 
     const [link, setLink] = useState("");
-    const [linkNum, setLinkNum] = useState(0);
 
     const handleClick = () => {
-        setLinkNum(linkNum + 1);
         props.addLink(link);
+        setLink("");
     }
 
     return (
         <>
             {props.links.map((value, index) =>
-                <LinkDetails key={index} link={value}/>
+                <Grid item xs={12} key={index}>
+                    <Typography style={{
+                        wordWrap: "break-word",
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap"
+                    }}>
+                        {value}
+                    </Typography>
+                    <Divider/>
+                </Grid>
             )}
             <Grid item xs={12}>
                 <TextField
@@ -31,6 +39,7 @@ const ThirdPage = (props: ThirdPageProps) => {
                     onChange={(e) => {
                         setLink(e.target.value)
                     }}
+                    value={link}
                 />
             </Grid>
             <Grid container justifyContent={'flex-end'}>
