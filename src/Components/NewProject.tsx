@@ -1,4 +1,4 @@
-import {Box, Button, Grid, Typography} from "@mui/material";
+import {Box, Button, Grid, Step, StepLabel, Stepper, Typography} from "@mui/material";
 import FirstPage from "./FirstPage";
 import SecondPage from "./SecondPage";
 import {useEffect, useState} from "react";
@@ -12,13 +12,15 @@ const NewProject = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [nameError, setNameError] = useState(false);
-
     const [project, setProject] = useState<Project>({
         name: "",
         description: "",
         workers: new Array<Worker>(),
         links: []
     });
+
+    const steps =  ["Projekt adatai", "Dolgozók", "Dokumentumok"];
+    const titles = ["Projekt hozzáadása", "Dolgozók felvitele", "Dokumentumok csatolása"];
 
     const setProjectName = (name: string) => {
         let tmp = project;
@@ -56,22 +58,25 @@ const NewProject = () => {
             }
         }
     }
-    useEffect(() => {
-    }, [project]);
 
     const prevPage = () => {
         setCurrentPage(currentPage - 1);
     }
 
+    useEffect(() => {
+    }, [project]);
+
     return (
         <>
             <Typography alignSelf="center" variant="h3" gutterBottom={true}>
-                Új projekt felvitele
+                {titles[currentPage-1]}
             </Typography>
             <Box display="flex">
                 <Grid container rowSpacing={3} columnSpacing={3}>
                     {currentPage === 1 &&
                     <FirstPage
+                        name={project.name}
+                        description={project.description}
                         nameError={nameError}
                         setNameError={setNameError}
                         setName={setProjectName}
@@ -84,6 +89,15 @@ const NewProject = () => {
                     {currentPage === 3 &&
                     <ThirdPage addLink={addLink} links={project.links}/>
                     }
+                    <Grid item xs={12}>
+                        <Stepper activeStep={currentPage-1} alternativeLabel>
+                            {steps.map((value) => (
+                                <Step key={value} color="#000">
+                                    <StepLabel>{value}</StepLabel>
+                                </Step>
+                            ))}
+                        </Stepper>
+                    </Grid>
                     <Grid item container
                           justifyContent="space-between">
                         <Grid item>

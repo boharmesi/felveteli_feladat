@@ -1,9 +1,8 @@
 import {Button, Grid, TextField} from "@mui/material";
 import WorkerDetails from "./WorkerDetails";
 import AddIcon from '@mui/icons-material/Add';
-import { useState} from "react";
+import React, {useState} from "react";
 import {Worker} from "../types";
-import React from "react";
 
 type SecondPageProps = {
     addWorker: (name: string, position: string) => void;
@@ -18,7 +17,7 @@ const SecondPage = (props: SecondPageProps) => {
     const [workerNum, setWorkerNum] = useState(0);
 
     const handleClick = () => {
-        setWorkerNum(workerNum+1);
+        setWorkerNum(workerNum + 1);
         props.addWorker(workerName, workerPos);
     }
 

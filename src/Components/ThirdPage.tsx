@@ -14,14 +14,14 @@ const ThirdPage = (props: ThirdPageProps) => {
     const [linkNum, setLinkNum] = useState(0);
 
     const handleClick = () => {
-        setLinkNum(linkNum+1);
+        setLinkNum(linkNum + 1);
         props.addLink(link);
     }
 
     return (
         <>
             {props.links.map((value, index) =>
-                <LinkDetails key={index} link={value} />
+                <LinkDetails key={index} link={value}/>
             )}
             <Grid item xs={12}>
                 <TextField
