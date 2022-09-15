@@ -1,5 +1,5 @@
 import {Dialog, DialogContent, DialogTitle, Divider, Grid, Link, Typography} from "@mui/material";
-import {Project} from "../types";
+import {Project} from "./types";
 
 type DialogProps = {
     open: boolean;

@@ -1,9 +1,9 @@
 import {Button, Grid, Typography} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import {useNavigate} from "react-router-dom";
-import {Project} from "../types";
-import "../Projects";
-import {getProjects} from "../Projects";
+import {Project} from "./types";
+import "../DataSource/Projects";
+import {getProjects} from "../DataSource/Projects";
 import React, {useState} from "react";
 import ProjectCard from "./ProjectCard";
 

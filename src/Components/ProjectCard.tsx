@@ -1,7 +1,7 @@
 import {Button, Card, CardActions, CardContent, CardHeader, Grid, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 import ProjectDetailsDialog from "../Components/ProjectDetailsDialog"
-import {Project} from "../types";
+import {Project} from "./types";
 
 type ProjectCardProps = {
     project: Project;

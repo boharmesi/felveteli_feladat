@@ -1,8 +1,8 @@
 import {Button, Grid, TextField} from "@mui/material";
-import WorkerDetails from "./WorkerDetails";
+import WorkerDetails from "../WorkerDetails";
 import AddIcon from '@mui/icons-material/Add';
 import React, {useState} from "react";
-import {Worker} from "../types";
+import {Worker} from "../../types";
 
 type SecondPageProps = {
     addWorker: (name: string, position: string) => void;

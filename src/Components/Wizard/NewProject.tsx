@@ -1,10 +1,10 @@
 import {Box, Button, Grid, Step, StepLabel, Stepper, Typography} from "@mui/material";
-import FirstPage from "./FirstPage";
-import SecondPage from "./SecondPage";
+import FirstPage from "./Pages/FirstPage";
+import SecondPage from "./Pages/SecondPage";
 import {useEffect, useState} from "react";
 import {Project, Worker} from "../types"
-import ThirdPage from "./ThirdPage";
-import {addProject} from "../Projects"
+import ThirdPage from "./Pages/ThirdPage";
+import {addProject} from "../../DataSource/Projects"
 import {useNavigate} from "react-router-dom";
 
 const NewProject = () => {
