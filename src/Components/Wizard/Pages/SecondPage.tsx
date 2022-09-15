@@ -55,7 +55,7 @@ const SecondPage = (props: SecondPageProps) => {
             </Grid>
             <Grid container justifyContent={'flex-end'}>
                 <Grid item>
-                    <Button startIcon={<AddIcon/>} color="primary" onClick={handleClick}>
+                    <Button startIcon={<AddIcon/>} color="primary" onClick={handleClick} disabled={workerName === "" || workerPos === ""}>
                         Hozzáadás
                     </Button>
                 </Grid>

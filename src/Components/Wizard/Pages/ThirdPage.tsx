@@ -44,7 +44,7 @@ const ThirdPage = (props: ThirdPageProps) => {
             </Grid>
             <Grid container justifyContent={'flex-end'}>
                 <Grid item>
-                    <Button startIcon={<AddIcon/>} color="primary" onClick={handleClick}>
+                    <Button startIcon={<AddIcon/>} color="primary" onClick={handleClick} disabled={link === ""}>
                         Hozzáadás
                     </Button>
                 </Grid>
